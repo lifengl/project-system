@@ -30,7 +30,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS
                 InheritProcessEnvironment = true,
                 AutomaticallyDismissMessageBoxes = true,
                 DelayInitialVsLicenseValidation = true,
-                ForceFirstLaunch = true,
+                ForceFirstLaunch = false,
                 BootstrapInjection = BootstrapInjectionMethod.DteFromROT,
             };
 
@@ -40,6 +40,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS
         protected override void DoHostTestInitialize()
         {
             base.DoHostTestInitialize();
+            VisualStudio.ProductKeyService.DisableFirstLaunchSigninPrompt();
             VisualStudio.ObjectModel.MainWindow.Activate();
         }
 
