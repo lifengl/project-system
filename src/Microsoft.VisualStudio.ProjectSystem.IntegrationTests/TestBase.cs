@@ -39,8 +39,6 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS
 
         protected override void DoHostTestCleanup()
         {
-            base.DoHostTestCleanup();
-
             TryShutdownVisualStudioInstance();
         }
 
