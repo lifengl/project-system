@@ -37,6 +37,12 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS
             return visualStudioHostConfiguration;
         }
 
+        protected override void DoHostTestInitialize()
+        {
+            base.DoHostTestInitialize();
+            VisualStudio.ObjectModel.MainWindow.Activate();
+        }
+
         protected override void DoHostTestCleanup()
         {
             TryShutdownVisualStudioInstance();
